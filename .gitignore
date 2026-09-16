@@ -80,3 +80,10 @@ Telegram/SourceFiles/_other/packer_private.h
 # Build logs
 /build_log.txt
 /build_full_log.txt
+
+# Agent tooling (not part of DiveGram source)
+.agents/
+.claude/
+AGENTS.md
+CLAUDE.md
+tasks/
