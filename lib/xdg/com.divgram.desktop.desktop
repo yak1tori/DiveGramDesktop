@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=DiveGram Desktop
+Comment=Desktop version of DiveGram - ToS breaking Telegram client
+TryExec=DiveGram
+Exec=env DESKTOPINTEGRATION=1 DiveGram -- %U
+Icon=com.divegram.desktop
+Terminal=false
+StartupWMClass=DiveGram
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;x-scheme-handler/tonsite;
+Keywords=tg;chat;im;messaging;messenger;sms;telegram;tdesktop;
+Actions=quit;
+DBusActivatable=true
+SingleMainWindow=true
+X-GNOME-UsesNotifications=true
+X-GNOME-SingleWindow=true
+
+[Desktop Action quit]
+Exec=DiveGram -quit
+Name=Quit DiveGram
+Icon=application-exit

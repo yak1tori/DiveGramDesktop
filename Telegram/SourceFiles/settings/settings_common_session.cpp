@@ -1,0 +1,33 @@
+/*
+This file is part of Telegram Desktop,
+the official desktop application for the Telegram messaging service.
+
+For license and copyright information please follow this link:
+https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
+*/
+#include "settings/settings_common_session.h"
+
+#include "settings/cloud_password/settings_cloud_password_email_confirm.h"
+#include "settings/settings_experimental.h"
+#include "settings/sections/settings_chat.h"
+#include "settings/sections/settings_main.h"
+
+// DiveGram includes
+#include "ayu/ui/settings/settings_filters.h"
+
+// DiveGram includes
+#include "divegram/ui/settings/settings_divegram.h"
+
+
+namespace Settings {
+
+bool HasMenu(Type type) {
+	return (type == ::Settings::CloudPasswordEmailConfirmId())
+		|| (type == MainId())
+		|| (type == ChatId())
+		|| (type == Experimental::Id())
+		|| (type == AyuFiltersId())
+		|| (type == DiveGramMain::Id());
+}
+
+} // namespace Settings
