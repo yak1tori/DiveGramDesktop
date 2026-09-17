@@ -12,9 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { submodules: recursive }
-      - name: Build our env image (their centos_env Dockerfile -> one env)
+      - name: Render Dockerfile (their centos_env/Dockerfile is a jinja2 template -> gen_dockerfile.py)
         run: |
-          docker build -t divegram_env -f Telegram/build/docker/centos_env/Dockerfile .
+          python3 -m pip install --quiet --user jinja2
+          python3 Telegram/build/docker/centos_env/gen_dockerfile.py > Telegram/build/docker/centos_env/Dockerfile.generated
+      - name: Build our env image (rendered template -> one env)
+        run: |
+          docker build -t divegram_env -f Telegram/build/docker/centos_env/Dockerfile.generated .
       - name: Configure (source root, API vars, Ninja Release)
         run: |
           docker run --rm -v "$PWD:/usr/src/tdesktop" -w /usr/src/tdesktop \
