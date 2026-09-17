@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/userdesktop/tdesktop:ubuntu-22.04
+      image: ghcr.io/telegramdesktop/tdesktop:ubuntu-22.04
     env:
       TDESKTOP_API_ID: ${{ vars.TDESKTOP_API_ID }}
       TDESKTOP_API_HASH: ${{ vars.TDESKTOP_API_HASH }}
