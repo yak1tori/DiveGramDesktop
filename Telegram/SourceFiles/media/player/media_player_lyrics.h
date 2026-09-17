@@ -87,8 +87,19 @@ private:
 	};
 	std::vector<LineRect> _lineRects;
 
+	Ui::Animations::Simple _appearAnim;
+	Ui::Animations::Simple _closeAnim;
+	Ui::Animations::Simple _switchAnim;
+	bool _closing = false;
+	bool _switchAnimRunning = false;
+
 	Ui::Animations::Simple _followAnim;
 	Ui::Animations::Simple _activeColorAnim;
+	Ui::Animations::Simple _appearAnim;
+	Ui::Animations::Simple _closeAnim;
+	Ui::Animations::Simple _switchAnim;
+	bool _closing = false;
+	bool _switchAnimating = false;
 
 	rpl::lifetime _lifetime;
 

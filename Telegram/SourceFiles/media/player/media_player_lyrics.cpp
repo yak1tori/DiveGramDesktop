@@ -53,6 +53,11 @@ constexpr auto kDimAlpha = 160;
 constexpr auto kHighlightDuration = crl::time(250);
 constexpr auto kScrollDuration = crl::time(300);
 constexpr auto kLeftZone = 0.40;
+constexpr auto kAppearDuration = crl::time(220);
+constexpr auto kHideDuration = crl::time(180);
+constexpr auto kSwitchFadeDuration = crl::time(200);
+constexpr auto kAppearSlide = 16;
+constexpr auto kHideSlide = 24;
 constexpr auto kLineGap = 12;
 constexpr auto kTextFontSize = 48;
 
@@ -528,6 +533,13 @@ LyricsWidget::LyricsWidget(
 	}, lifetime());
 
 	show();
+
+	_appearAnim.start(
+		[=] { update(); },
+		0.,
+		1.,
+		kAppearDuration,
+		anim::sineInOut);
 }
 
 void LyricsWidget::startLyricsFetch(not_null<DocumentData*> document) {
@@ -567,6 +579,13 @@ void LyricsWidget::switchTo(FullMsgId contextId, not_null<DocumentData*> documen
 	_totalTextHeight = 0;
 	_loading = false;
 	_fetchFailed = false;
+	_switchAnimRunning = true;
+	_switchAnim.start([=] {
+		if (_switchAnim.value(1.) >= 1.) {
+			_switchAnimRunning = false;
+		}
+		update();
+	}, 0., 1., kSwitchFadeDuration, anim::sineInOut);
 	_documentMedia = document->createMediaView();
 	_documentMedia->thumbnailWanted(Data::FileOrigin(_contextId));
 	_documentMedia->goodThumbnailWanted();
@@ -723,7 +742,13 @@ void LyricsWidget::seekToMs(crl::time ms) {
 }
 
 void LyricsWidget::closeLayer() {
-	_controller->hideSpecialLayer(anim::type::normal);
+	_closing = true;
+	_closeAnim.start([=] {
+		update();
+		if (_closeAnim.value(0.) <= 0.01) {
+			_controller->hideSpecialLayer(anim::type::instant);
+		}
+	}, 1., 0., kHideDuration, anim::sineInOut);
 }
 
 QRect LyricsWidget::cardRect() const {
@@ -771,7 +796,25 @@ void LyricsWidget::parentResized() {
 void LyricsWidget::paintEvent(QPaintEvent *e) {
 	QPainter p(this);
 
-	p.fillRect(rect(), QColor(0, 0, 0, kDimAlpha));
+	const auto appearValue = _appearAnim.value(1.);
+	const auto closeValue = _closeAnim.value(1.);
+	const auto switchValue = _switchAnimRunning
+		? _switchAnim.value(1.)
+		: 1.;
+	const auto overall = (_closing ? (1. - closeValue) : appearValue)
+		* switchValue;
+	const auto slide = _closing
+		? int((1. - appearValue) * (kHideSlide + kAppearSlide) + closeValue * kHideSlide)
+		: int((1. - appearValue) * kAppearSlide);
+
+	if (overall < 1.) {
+		p.setOpacity(overall);
+	}
+	if (slide != 0) {
+		p.translate(0, slide);
+	}
+
+	p.fillRect(rect(), QColor(0, 0, 0, int(kDimAlpha * (_closing ? (1. - closeValue) : 1.)));
 
 	const auto card = cardRect();
 	const auto geom = ComputeLeftColumn(card);

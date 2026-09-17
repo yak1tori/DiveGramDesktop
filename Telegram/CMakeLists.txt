@@ -52,8 +52,6 @@ endif()
 if (WIN32)
     include(cmake/generate_midl.cmake)
     generate_midl(Telegram ${src_loc}
-        platform/win/windows_quiethours.idl
-        platform/win/windows_toastactivator.idl
     )
 endif()
 
@@ -206,10 +204,6 @@ set(divegram_ayu_files
         ayu/libs/sqlite/sqlite_orm.h
         ayu/features/streamer_mode/platform/linux/streamer_mode_linux.cpp
         ayu/features/streamer_mode/platform/linux/streamer_mode_linux.h
-        ayu/features/streamer_mode/platform/mac/streamer_mode_mac.mm
-        ayu/features/streamer_mode/platform/mac/streamer_mode_mac.h
-        ayu/features/streamer_mode/platform/win/streamer_mode_win.cpp
-        ayu/features/streamer_mode/platform/win/streamer_mode_win.h
         ayu/features/streamer_mode/platform/platform_streamer_mode.h
         ayu/features/streamer_mode/streamer_mode.cpp
         ayu/features/streamer_mode/streamer_mode.h
@@ -1796,80 +1790,6 @@ PRIVATE
     platform/linux/tray_linux.cpp
     platform/linux/tray_linux.h
     platform/linux/webauthn_linux.cpp
-    platform/mac/file_utilities_mac.mm
-    platform/mac/file_utilities_mac.h
-    platform/mac/global_menu_mac.h
-    platform/mac/global_menu_mac.mm
-    platform/mac/launcher_mac.mm
-    platform/mac/launcher_mac.h
-    platform/mac/integration_mac.mm
-    platform/mac/integration_mac.h
-    platform/mac/mac_iconv_helper.c
-    platform/mac/main_window_mac.mm
-    platform/mac/main_window_mac.h
-    platform/mac/native_event_mac.h
-    platform/mac/native_event_mac.mm
-    platform/mac/notifications_manager_mac.mm
-    platform/mac/notifications_manager_mac.h
-    platform/mac/notifications_manager_mac_un.mm
-    platform/mac/notifications_manager_mac_un.h
-    platform/mac/overlay_widget_mac.h
-    platform/mac/overlay_widget_mac.mm
-    platform/mac/specific_mac.mm
-    platform/mac/specific_mac.h
-    platform/mac/specific_mac_p.mm
-    platform/mac/specific_mac_p.h
-    platform/mac/translate_provider_mac.h
-    platform/mac/translate_provider_mac.mm
-    platform/mac/tray_mac.h
-    platform/mac/tray_mac.mm
-    platform/mac/webauthn_mac.mm
-    platform/mac/window_title_mac.mm
-    platform/mac/touchbar/items/mac_formatter_item.h
-    platform/mac/touchbar/items/mac_formatter_item.mm
-    platform/mac/touchbar/items/mac_pinned_chats_item.h
-    platform/mac/touchbar/items/mac_pinned_chats_item.mm
-    platform/mac/touchbar/items/mac_scrubber_item.h
-    platform/mac/touchbar/items/mac_scrubber_item.mm
-    platform/mac/touchbar/mac_touchbar_audio.h
-    platform/mac/touchbar/mac_touchbar_audio.mm
-    platform/mac/touchbar/mac_touchbar_common.h
-    platform/mac/touchbar/mac_touchbar_common.mm
-    platform/mac/touchbar/mac_touchbar_controls.h
-    platform/mac/touchbar/mac_touchbar_controls.mm
-    platform/mac/touchbar/mac_touchbar_main.h
-    platform/mac/touchbar/mac_touchbar_main.mm
-    platform/mac/touchbar/mac_touchbar_manager.h
-    platform/mac/touchbar/mac_touchbar_manager.mm
-    platform/mac/touchbar/mac_touchbar_media_view.h
-    platform/mac/touchbar/mac_touchbar_media_view.mm
-    platform/win/file_utilities_win.cpp
-    platform/win/file_utilities_win.h
-    platform/win/launcher_win.cpp
-    platform/win/launcher_win.h
-    platform/win/integration_win.cpp
-    platform/win/integration_win.h
-    platform/win/main_window_win.cpp
-    platform/win/main_window_win.h
-    platform/win/notifications_manager_win.cpp
-    platform/win/notifications_manager_win.h
-    platform/win/overlay_widget_win.h
-    platform/win/specific_win.cpp
-    platform/win/specific_win.h
-    platform/win/translate_provider_win.h
-    platform/win/tray_win.cpp
-    platform/win/tray_win.h
-    platform/win/webauthn_win.cpp
-    platform/win/windows_app_user_model_id.cpp
-    platform/win/windows_app_user_model_id.h
-    platform/win/windows_dlls.cpp
-    platform/win/windows_dlls.h
-    platform/win/windows_autostart_task.cpp
-    platform/win/windows_autostart_task.h
-    platform/win/windows_taskbar_buttons.cpp
-    platform/win/windows_taskbar_buttons.h
-    platform/win/windows_toast_activator.cpp
-    platform/win/windows_toast_activator.h
     platform/platform_file_utilities.cpp
     platform/platform_file_utilities.h
     platform/platform_launcher.h
@@ -2263,14 +2183,11 @@ endif()
 
 if (NOT build_winstore)
     remove_target_sources(Telegram ${src_loc}
-        platform/win/windows_start_task.cpp
-        platform/win/windows_start_task.h
     )
 endif()
 
 if (DESKTOP_APP_USE_PACKAGED)
     remove_target_sources(Telegram ${src_loc}
-        platform/mac/mac_iconv_helper.c
     )
 endif()
 
@@ -2293,8 +2210,8 @@ PRIVATE
     qrc/telegram/picker.qrc
     qrc/telegram/telegram.qrc
     qrc/telegram/sounds.qrc
-    winrc/Telegram.rc
-    winrc/Telegram.manifest
+    Telegram.rc
+    Telegram.manifest
     langs/lang.strings
     langs/cloud_lang.strings
     numbers.txt
@@ -2312,14 +2229,14 @@ endif()
 
 if (WIN32)
     # message(${CMAKE_GENERATOR})
-    # mt.exe -manifest "${res_loc}/winrc/Telegram.manifest" "-inputresource:\"$<TARGET_FILE:Telegram>\";#1" "-outputresource:\"$<TARGET_FILE:Telegram>\";#1" >NUL
+    # mt.exe -manifest "${res_loc}/Telegram.manifest" "-inputresource:\"$<TARGET_FILE:Telegram>\";#1" "-outputresource:\"$<TARGET_FILE:Telegram>\";#1" >NUL
     # set(hash_symbol "#")
     # set(release $<CONFIG:Release>)
     # add_custom_command(
     # TARGET
     #     Telegram
     # POST_BUILD COMMAND
-    #     $<IF:${release},mt.exe,echo.> $<${release}:-manifest> $<${release}:"${res_loc}/winrc/Telegram.manifest"> $<${release}:-inputresource:"$<TARGET_FILE:Telegram>"$<SEMICOLON>${hash_symbol}1> $<${release}:-outputresource:"$<TARGET_FILE:Telegram>"$<SEMICOLON>${hash_symbol}1> $<${release}:$<ANGLE-R>NUL>
+    #     $<IF:${release},mt.exe,echo.> $<${release}:-manifest> $<${release}:"${res_loc}/Telegram.manifest"> $<${release}:-inputresource:"$<TARGET_FILE:Telegram>"$<SEMICOLON>${hash_symbol}1> $<${release}:-outputresource:"$<TARGET_FILE:Telegram>"$<SEMICOLON>${hash_symbol}1> $<${release}:$<ANGLE-R>NUL>
     # COMMENT
     #     $<IF:${release},"Appending compatibility manifest.","Finalizing build.">
     # )
@@ -2621,8 +2538,6 @@ if (NOT DESKTOP_APP_DISABLE_AUTOUPDATE AND NOT build_macstore AND NOT build_wins
         get_filename_component(lib_base_loc lib_base REALPATH)
         nice_target_sources(Updater ${lib_base_loc}
         PRIVATE
-            base/platform/win/base_windows_safe_library.cpp
-            base/platform/win/base_windows_safe_library.h
         )
         target_include_directories(Updater PRIVATE ${lib_base_loc})
         if (MSVC)

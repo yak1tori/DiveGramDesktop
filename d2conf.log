@@ -1,0 +1,306 @@
+Version: 7.0.9
+-- The C compiler identification is GNU 15.2.1
+-- The CXX compiler identification is GNU 15.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/ccache - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/ccache - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test DESKTOP_APP__Wall_EXISTS
+-- Performing Test DESKTOP_APP__Wall_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wextra_EXISTS
+-- Performing Test DESKTOP_APP__Wextra_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_unused_parameter_EXISTS
+-- Performing Test DESKTOP_APP__Wno_unused_parameter_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_switch_EXISTS
+-- Performing Test DESKTOP_APP__Wno_switch_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_maybe_uninitialized_EXISTS
+-- Performing Test DESKTOP_APP__Wno_maybe_uninitialized_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_missing_field_initializers_EXISTS
+-- Performing Test DESKTOP_APP__Wno_missing_field_initializers_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_sign_compare_EXISTS
+-- Performing Test DESKTOP_APP__Wno_sign_compare_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_deprecated_EXISTS
+-- Performing Test DESKTOP_APP__Wno_deprecated_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_array_bounds_EXISTS
+-- Performing Test DESKTOP_APP__Wno_array_bounds_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_free_nonheap_object_EXISTS
+-- Performing Test DESKTOP_APP__Wno_free_nonheap_object_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_stringop_overflow_EXISTS
+-- Performing Test DESKTOP_APP__Wno_stringop_overflow_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_alloc_size_larger_than_EXISTS
+-- Performing Test DESKTOP_APP__Wno_alloc_size_larger_than_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_stringop_overread_EXISTS
+-- Performing Test DESKTOP_APP__Wno_stringop_overread_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_odr_EXISTS
+-- Performing Test DESKTOP_APP__Wno_odr_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_inline_EXISTS
+-- Performing Test DESKTOP_APP__Wno_inline_EXISTS - Success
+-- Performing Test DESKTOP_APP__pthread_EXISTS
+-- Performing Test DESKTOP_APP__pthread_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wl___as_needed_EXISTS
+-- Performing Test DESKTOP_APP__Wl___as_needed_EXISTS - Success
+-- Found ZLIB: /usr/local/lib64/libz.a (found version "1.3.2.1")  
+-- Found WrapSystemZLIB: TRUE (found version "1.3.2.1") 
+-- Using system ZLIB.
+-- Found WrapZLIB: TRUE (found version "1.3.2.1") 
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE  
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- backtrace facility detected in default set of libraries
+-- Found Backtrace: /usr/include  
+-- Using Qt bundled PCRE2.
+-- Found WrapPCRE2: TRUE (found version "6.11.2") 
+-- Found GLIB2: /usr/lib64/libglib-2.0.so   
+-- Performing Test HAVE_GETTIME
+-- Performing Test HAVE_GETTIME - Success
+-- Performing Test HAVE_SHM_OPEN_SHM_UNLINK
+-- Performing Test HAVE_SHM_OPEN_SHM_UNLINK - Success
+-- Found WrapRt: TRUE  
+-- Found OpenGL: /usr/local/lib64/libOpenGL.a   
+-- Found WrapOpenGL: TRUE  
+-- Performing Test HAVE_EGL
+-- Performing Test HAVE_EGL - Success
+-- Found EGL: /usr/include (found version "1.5") 
+-- Found PkgConfig: /usr/local/bin/pkg-config (found version "1.4.2") 
+-- Checking for module 'lcms2'
+--   Found lcms2, version 2.15
+-- Found lcms version 2.15, /usr/local/lib64/liblcms2.a
+-- Using Qt bundled PNG.
+-- Found WrapPNG: TRUE (found version "6.11.2") 
+-- Using Qt bundled Harfbuzz.
+-- Found WrapHarfbuzz: TRUE (found version "6.11.2") 
+-- Found WrapSystemFreetype: /usr/lib64/libfreetype.so (found version "2.9.1") 
+-- Using system Freetype.
+-- Found WrapFreetype: TRUE (found version "2.9.1") 
+-- Found Fontconfig: /usr/lib64/libfontconfig.so (found version "2.13.1") 
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/local/lib64/libX11.a;/usr/local/lib/libXext.a
+-- Looking for XOpenDisplay in /usr/local/lib64/libX11.a;/usr/local/lib/libXext.a - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Found XKB: /usr/local/lib64/libxkbcommon.a (found suitable version "1.6.0", minimum required is "0.9.0") 
+-- Found WrapVulkanHeaders: /usr/include  
+-- Found Wayland_Client: /usr/local/lib64/libwayland-client.a (found version "1.21.0") 
+-- Found Wayland_Server: /usr/local/lib64/libwayland-server.a (found version "1.21.0") 
+-- Found Wayland_Cursor: /usr/local/lib64/libwayland-cursor.a (found version "1.21.0") 
+-- Found Wayland_Egl: /usr/local/lib64/libwayland-egl.a (found version "18.1.0") 
+-- Found Wayland: /usr/local/lib64/libwayland-client.a;/usr/local/lib64/libwayland-server.a;/usr/local/lib64/libwayland-cursor.a;/usr/local/lib64/libwayland-egl.a (found version "1.21.0")  
+-- Found WaylandScanner: /usr/bin/wayland-scanner  
+-- Checking for module 'libudev'
+--   Found libudev, version 239
+-- Checking for module 'gtk+-3.0 >= 3.6'
+--   Found gtk+-3.0 , version 3.22.30
+-- Found WrapSystemJpeg: /usr/local/lib64/libjpeg.a (found version "80") 
+-- Using system Jpeg.
+-- Found WrapJpeg: TRUE (found version "80") 
+-- Found Libdrm: /usr/local/lib64/libdrm.a (found version "2.4.115") 
+-- Performing Test HAVE_LIBRESOLV_FUNCTIONS
+-- Performing Test HAVE_LIBRESOLV_FUNCTIONS - Success
+-- Found WrapResolv: TRUE  
+-- Found Threads: TRUE  
+-- Found OpenSSL: /usr/local/lib64/libcrypto.a (found version "3.2.1")  
+-- Found WrapOpenSSLHeaders: /usr/local/include (found version "3.2.1") 
+-- Found WrapOpenSSL: /usr/local/lib64/libcrypto.a (found version "3.2.1") 
+-- Found GLIB2: /usr/lib64/libglib-2.0.so  found components: GOBJECT 
+-- Found GLIB2: /usr/lib64/libglib-2.0.so  found components: GIO 
+-- Found Wayland: /usr/local/lib64/libwayland-client.a;/usr/local/lib64/libwayland-server.a;/usr/local/lib64/libwayland-cursor.a;/usr/local/lib64/libwayland-egl.a (found suitable version "1.21.0", minimum required is "1.15")  
+-- Checking for module 'xkbcommon-x11>=0.4.1'
+--   Found xkbcommon-x11, version 1.6.0
+-- XCB: CURSOR requires XCB
+-- Found XCB_XCB: /usr/local/lib64/libxcb.a (found version "1.13.1") 
+-- Found XCB_CURSOR: /usr/local/lib/libxcb-cursor.a (found version "0.1.5") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a (found version "1.13.1") found components: CURSOR 
+-- XCB: ICCCM requires XCB
+-- Found XCB_ICCCM: /usr/local/lib/libxcb-icccm.a (found version "0.4.2") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a (found version "1.13.1") found components: ICCCM 
+-- XCB: UTIL requires XCB
+-- Found XCB_UTIL: /usr/local/lib/libxcb-util.a (found version "0.4.1") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a (found version "1.13.1") found components: UTIL 
+-- XCB: IMAGE requires XCB;SHM;AUX
+-- XCB: IMAGE requires XCB;SHM;AUX
+-- XCB: IMAGE requires XCB;SHM;AUX
+-- Found XCB_SHM: /usr/local/lib/libxcb-shm.a (found version "1.16") 
+-- Found XCB_AUX: /usr/local/lib/libxcb-util.a (found version "0.4.1") 
+-- Found XCB_IMAGE: /usr/local/lib/libxcb-image.a (found version "0.4.1") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a (found version "1.13.1") found components: IMAGE 
+-- XCB: KEYSYMS requires XCB
+-- Found XCB_KEYSYMS: /usr/local/lib/libxcb-keysyms.a (found version "0.4.1") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a (found version "1.13.1") found components: KEYSYMS 
+-- XCB: RANDR requires XCB
+-- Found XCB_RANDR: /usr/local/lib/libxcb-randr.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a (found version "1.13.1") found components: RANDR 
+-- XCB: RENDER requires XCB
+-- Found XCB_RENDER: /usr/local/lib/libxcb-render.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a (found version "1.13.1") found components: RENDER 
+-- XCB: RENDERUTIL requires XCB;RENDER
+-- XCB: RENDERUTIL requires XCB;RENDER
+-- Found XCB_RENDERUTIL: /usr/local/lib/libxcb-render-util.a (found version "0.3.10") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a (found version "1.13.1") found components: RENDERUTIL 
+-- XCB: SHAPE requires XCB
+-- Found XCB_SHAPE: /usr/local/lib/libxcb-shape.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a (found version "1.13.1") found components: SHAPE 
+-- XCB: SHM requires XCB
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a (found version "1.13.1") found components: SHM 
+-- XCB: SYNC requires XCB
+-- Found XCB_SYNC: /usr/local/lib/libxcb-sync.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a;/usr/local/lib/libxcb-sync.a (found version "1.13.1") found components: SYNC 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a;/usr/local/lib/libxcb-sync.a (found suitable version "1.13.1", minimum required is "1.11") found components: XCB 
+-- XCB: XFIXES requires XCB;RENDER;SHAPE
+-- XCB: XFIXES requires XCB;RENDER;SHAPE
+-- XCB: XFIXES requires XCB;RENDER;SHAPE
+-- Found XCB_XFIXES: /usr/local/lib/libxcb-xfixes.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a;/usr/local/lib/libxcb-sync.a;/usr/local/lib/libxcb-xfixes.a (found version "1.13.1") found components: XFIXES 
+-- XCB: XKB requires XCB
+-- Found XCB_XKB: /usr/local/lib/libxcb-xkb.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a;/usr/local/lib/libxcb-sync.a;/usr/local/lib/libxcb-xfixes.a;/usr/local/lib/libxcb-xkb.a (found version "1.13.1") found components: XKB 
+-- Found X11_XCB: /usr/local/lib64/libX11-xcb.a (found version "1.6.8") 
+-- XCB: GLX requires XCB
+-- Found XCB_GLX: /usr/local/lib/libxcb-glx.a (found version "1.16") 
+-- Found XCB: /usr/local/lib64/libxcb.a;/usr/local/lib/libxcb-cursor.a;/usr/local/lib/libxcb-icccm.a;/usr/local/lib/libxcb-util.a;/usr/local/lib/libxcb-shm.a;/usr/local/lib/libxcb-image.a;/usr/local/lib/libxcb-keysyms.a;/usr/local/lib/libxcb-randr.a;/usr/local/lib/libxcb-render.a;/usr/local/lib/libxcb-render-util.a;/usr/local/lib/libxcb-shape.a;/usr/local/lib/libxcb-sync.a;/usr/local/lib/libxcb-xfixes.a;/usr/local/lib/libxcb-xkb.a;/usr/local/lib/libxcb-glx.a (found version "1.13.1") found components: GLX 
+-- Found Boost: /usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake (found version "1.90.0") found components: regex 
+-- Performing Test DESKTOP_APP__Wno_implicit_fallthrough_EXISTS
+-- Performing Test DESKTOP_APP__Wno_implicit_fallthrough_EXISTS - Success
+-- Performing Test HAVE_FLAG_ADDRESS_SANITIZER
+-- Performing Test HAVE_FLAG_ADDRESS_SANITIZER - Failed
+-- Performing Test HAVE_FLAG_SANITIZE_ADDRESS
+-- Performing Test HAVE_FLAG_SANITIZE_ADDRESS - Success
+-- Checking _FILE_OFFSET_BITS for large files
+-- Checking _FILE_OFFSET_BITS for large files - not needed
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+-- Looking for stdbool.h
+-- Looking for stdbool.h - found
+-- Performing Test HAVE___BUILTIN_EXPECT
+-- Performing Test HAVE___BUILTIN_EXPECT - Success
+-- Performing Test HAVE___ATTRIBUTE__
+-- Performing Test HAVE___ATTRIBUTE__ - Success
+-- Checking for modules 'libavcodec;libavfilter;libavformat;libavutil;libswresample;libswscale'
+--   Found libavcodec, version 60.31.102
+--   Found libavfilter, version 9.12.100
+--   Found libavformat, version 60.16.101
+--   Found libavutil, version 58.29.100
+--   Found libswresample, version 4.12.100
+--   Found libswscale, version 7.5.100
+-- Checking for modules 'glib-2.0;gobject-2.0;gio-2.0;gio-unix-2.0'
+--   Found glib-2.0, version 2.56.4
+--   Found gobject-2.0, version 2.56.4
+--   Found gio-2.0, version 2.56.4
+--   Found gio-unix-2.0, version 2.56.4
+-- Found Boost: /usr/local/lib/cmake/Boost-1.90.0/BoostConfig.cmake (found suitable version "1.90.0", minimum required is "1.58")  
+-- Checking for module 'fmt'
+--   Package 'fmt', required by 'virtual:world', not found
+-- fmtlib available status: OFF
+-- std::format available status: TRUE
+-- coroutine support available status: TRUE
+-- example programs: 
+-- ronn manpage processor not found; not building manpage
+-- Checking for module 'hunspell'
+--   Package 'hunspell', required by 'virtual:world', not found
+-- Found JPEG: /usr/local/lib64/libjpeg.a (found version "80") 
+-- Checking for module 'liblz4'
+--   Package 'liblz4', required by 'virtual:world', not found
+-- Checking for module 'openh264'
+--   Found openh264, version 2.6.0
+-- Checking for module 'libavif'
+--   Found libavif, version 1.4.2
+-- Checking for modules 'libjxl;libjxl_threads'
+--   Found libjxl, version 0.12.0
+--   Found libjxl_threads, version 0.12.0
+-- Checking for module 'gio-2.0'
+--   Found gio-2.0, version 2.56.4
+-- Checking for module 'xkbcommon'
+--   Found xkbcommon, version 1.6.0
+-- Checking for module 'xcb'
+--   Found xcb, version 1.13.1
+-- Checking for module 'rnnoise'
+--   Found rnnoise, version 0.2
+-- Checking for module 'vpx>=1.10.0'
+--   Found vpx, version 1.14.1
+-- Checking for module 'libxxhash'
+--   Package 'libxxhash', required by 'virtual:world', not found
+-- Performing Test DESKTOP_APP__Wno_deprecated_volatile_EXISTS
+-- Performing Test DESKTOP_APP__Wno_deprecated_volatile_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_ambiguous_reversed_operator_EXISTS
+-- Performing Test DESKTOP_APP__Wno_ambiguous_reversed_operator_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_deprecated_declarations_EXISTS
+-- Performing Test DESKTOP_APP__Wno_deprecated_declarations_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_unqualified_std_cast_call_EXISTS
+-- Performing Test DESKTOP_APP__Wno_unqualified_std_cast_call_EXISTS - Success
+-- Performing Test DESKTOP_APP__Wno_unused_function_EXISTS
+-- Performing Test DESKTOP_APP__Wno_unused_function_EXISTS - Success
+-- Checking for module 'libfido2'
+--   Package 'libfido2', required by 'virtual:world', not found
+-- Looking for include file endian.h
+-- Looking for include file endian.h - found
+-- Looking for include file err.h
+-- Looking for include file err.h - found
+-- Looking for include file signal.h
+-- Looking for include file signal.h - found
+-- Looking for include file sys/random.h
+-- Looking for include file sys/random.h - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for arc4random_buf
+-- Looking for arc4random_buf - not found
+-- Looking for asprintf
+-- Looking for asprintf - found
+-- Looking for clock_gettime
+-- Looking for clock_gettime - found
+-- Looking for explicit_bzero
+-- Looking for explicit_bzero - found
+-- Looking for freezero
+-- Looking for freezero - not found
+-- Looking for getline
+-- Looking for getline - found
+-- Looking for getpagesize
+-- Looking for getpagesize - found
+-- Looking for getrandom
+-- Looking for getrandom - found
+-- Looking for memset_s
+-- Looking for memset_s - not found
+-- Looking for recallocarray
+-- Looking for recallocarray - not found
+-- Looking for strlcat
+-- Looking for strlcat - not found
+-- Looking for strlcpy
+-- Looking for strlcpy - not found
+-- Looking for strsep
+-- Looking for strsep - found
+-- Looking for sysconf
+-- Looking for sysconf - found
+-- Looking for timespecsub
+-- Looking for timespecsub - not found
+-- Looking for timingsafe_bcmp
+-- Looking for timingsafe_bcmp - not found
+-- Checking for module 'libudev'
+--   Found libudev, version 239
+-- Found Python3: /usr/bin/python3.12 (found version "3.12.14") found components: Interpreter 
+-- QSB: found /usr/local/bin/qsb, will compile /usr/src/tdesktop/Telegram/shaders/*.vert/*.frag/*.comp
+-- Models: will bake /usr/src/tdesktop/Telegram/Resources/art/**/*.obj -> .binobj
+-- Configuring done (10.9s)
+CMake Error at Telegram/CMakeLists.txt:7 (add_executable):
+  Cannot find source file:
+
+    /usr/src/tdesktop/Telegram/Resources/winrc/Telegram.rc
+
+
+-- Generating done (0.3s)
+CMake Generate step failed.  Build files cannot be regenerated correctly.
