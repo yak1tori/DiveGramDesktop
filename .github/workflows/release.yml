@@ -1,0 +1,57 @@
+name: DiveGram Releases
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/userdesktop/tdesktop:ubuntu-22.04
+    env:
+      TDESKTOP_API_ID: ${{ vars.TDESKTOP_API_ID }}
+      TDESKTOP_API_HASH: ${{ vars.TDESKTOP_API_HASH }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Configure (source root, Linux-only)
+        run: |
+          cmake -S . -B out -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DTDESKTOP_API_ID=${{ env.TDESKTOP_API_ID }} \
+            -DTDESKTOP_API_HASH=${{ env.TDESKTOP_API_HASH }}
+
+      - name: Build Release
+        run: cmake --build out --config Release --target Telegram -j"$(nproc)"
+
+      - name: Locate binary
+        id: bin
+        run: |
+          BIN=$(find out -type f -name 'DiveGram' -perm -111 | head -n1)
+          [ -n "$BIN" ] || BIN=$(find out -type f -name 'Telegram' -perm -111 | head -n1)
+          [ -n "$BIN" ] || { echo "binary not found"; exit 1; }
+          echo "BIN=$BIN" >> "$GITHUB_ENV"
+
+      - name: Package (deb / rpm / pkg.tar.zst / tar.xz)
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          mkdir -p dist
+          bash dist.sh "$BIN" "$VERSION" dist
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: divegram-${{ github.ref_name }}
+          path: dist/*
+
+      - name: Publish to Releases
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
